@@ -1,0 +1,76 @@
+{
+    "messages": [
+      {
+        "creator": {
+          "name": "Lou",
+          "email": "lou@example.com",
+          "user_type": "Human"
+        },
+        "created_date": "Tuesday, February 10, 2015 at 6:03:00 PM UTC",
+        "text": "did you see the thing i sent u?"
+      },
+      {
+        "creator": {
+          "name": "Elektra",
+          "email": "elektra@example.com",
+          "user_type": "Human"
+        },
+        "created_date": "Tuesday, February 10, 2015 at 6:03:26 PM UTC",
+        "text": "nope not yet why"
+      },
+      {
+        "creator": {
+          "name": "Lou",
+          "email": "lou@example.com",
+          "user_type": "Human"
+        },
+        "created_date": "Tuesday, February 10, 2015 at 6:03:41 PM UTC",
+        "text": "it's pretty funny"
+      },
+      {
+        "creator": {
+          "name": "Elektra",
+          "email": "elektra@example.com",
+          "user_type": "Human"
+        },
+        "created_date": "Tuesday, February 10, 2015 at 6:03:43 PM UTC",
+        "text": "i'll go watch it"
+      },
+      {
+        "creator": {
+          "name": "Elektra",
+          "email": "elektra@example.com",
+          "user_type": "Human"
+        },
+        "created_date": "Tuesday, February 10, 2015 at 6:03:46 PM UTC",
+        "text": "nevermind gotta go"
+      },
+      {
+        "creator": {
+          "name": "Elektra",
+          "email": "elektra@example.com",
+          "user_type": "Human"
+        },
+        "created_date": "Tuesday, February 10, 2015 at 6:03:48 PM UTC",
+        "text": "talk later?"
+      },
+      {
+        "creator": {
+          "name": "Lou",
+          "email": "lou@example.com",
+          "user_type": "Human"
+        },
+        "created_date": "Tuesday, February 10, 2015 at 6:03:50 PM UTC",
+        "text": "okaaaay"
+      },
+      {
+        "creator": {
+          "name": "Lou",
+          "email": "lou@example.com",
+          "user_type": "Human"
+        },
+        "created_date": "Tuesday, February 10, 2015 at 6:03:52 PM UTC",
+        "text": "seeya later"
+      }
+    ]
+}

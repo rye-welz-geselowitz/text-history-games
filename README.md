@@ -1,1 +1,14 @@
 # text-history-games
+A command-line game. Upload your texting history with a friend (supports WhatsApp and Google). The game will prompt you with an out-of-context text; guess the date, sender identity, and context.
+
+## Run the game!
+Set up virtual env:
+```
+python3 -m venv text-history-games-env
+source text-history-games-env/bin/activate
+pip install -r requirements.txt
+```
+Run game:
+```
+python3 -m game
+```
