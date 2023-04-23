@@ -3,6 +3,9 @@ from game_engine import GameEngine, WhatsappFileConfig, GoogleFileConfig, FileIn
 from renderer import GameRenderer
 
 FILE_INPUT_CONFIGS = [
+    # Configure with your own source files! 
+    # TODO: Might be nice to make these available from the command line rather than 
+    # requiring user to edit this file 
     WhatsappFileConfig(
         participant1='Lou',
         participant2='Elektra',

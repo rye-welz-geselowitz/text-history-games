@@ -4,7 +4,12 @@ from termcolor import cprint # type: ignore
 from typing import Optional 
 
 
+# TODO: The os functions here (e.g. `os.clear`) are tested only on my own terminal set-up;
+# I believe other terminals require different commands. Ideally I would write a base class with 
+# abstract methods like `clear` and child classes for different environments, implementing those 
+# methods as appropriate. Since this is mostly a project for personal use I've deprioritized this! 
 class GameRenderer:
+    """ Renders an instance of a game """
     def __init__(
         self,
         standard_color: str, 
@@ -17,6 +22,7 @@ class GameRenderer:
 
     
     def loading(self) -> None:
+        """ Displays a loading image """
         os.system('color')
         os.system('clear')
         print('Loading!')
@@ -29,6 +35,7 @@ class GameRenderer:
         }.get(display_theme, self.standard_color)
 
     def render_state_and_get_next(self, state: State) -> Optional[State]:
+        """ Renders game state and returns the next state based on user input """
         os.system('clear')
         for text_element in state.text_elements:
             color = self._get_color_for_display_theme(text_element.display_theme)
@@ -43,7 +50,7 @@ class GameRenderer:
 
         while True:
             print()
-            user_input = input('>>>')
+            user_input = input('>>> ')
             for menu_option in state.menu_options:
                 if menu_option.accepted_values is None:
                     return menu_option.get_next_state()

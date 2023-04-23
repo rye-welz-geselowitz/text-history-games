@@ -24,7 +24,18 @@ class MenuOption:
     """ Dataclass representing a menu option """
     text: str 
     get_next_state: Callable[[], 'State']
+    # `accepted_values` expresses the list of values that trigger this
+    # menu option to be chosen. If None, any input is sufficient to pass to
+    # the next state. 
+    # TODO: What I think I really want is a behavior where any keystroke causes 
+    # the game to pass to the next state (rather than the current behavior, in which 
+    # any combination of key strokes ending in the "return" button accomplishes that).
+    # I would like to rethink this interface and also update the renderer to handle this 
+    # new behavior.
     accepted_values: Optional[Set[str]] = None
+
+    # TODO: Add a __post_init__ method validating that, if there is any menu option 
+    # with accepted_values = None, then it is the only such menu option.
 
 @dataclass
 class State:
@@ -137,6 +148,8 @@ class GameEngine:
         ]
         if len(filtered_messages) == 0:
             return State(
+                # TODO: Ideally we wouldn't show an option at all in the first place 
+                # if we already know there are no messages fitting that filter! 
                 text_elements=[TextElement('Oops, there are no messages fitting that filter!')],
                 menu_options=[
                     MenuOption(
@@ -151,6 +164,9 @@ class GameEngine:
     def _get_obscured_message_state(self) -> State:
         """ Returns a state prompting the player 
         to guess the context of a text message """
+        # TODO: Currently a message can be selected multiple times, would be 
+        # nice to update random choice logic so that a message appears at most 
+        # once during a run of the game.
         random_message = random.choice(self._filtered_messages)
         return State(
             text_elements=[TextElement(

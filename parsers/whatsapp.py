@@ -5,14 +5,14 @@ from  datetime import datetime
 import re 
 
 class WhatsappParser(Parser):
-        """ 
-        Parses a chat history file exported from Whatsapp
-        
-        Arguments:
-            filename (str): The name of the file to parse 
-        Returns:
-            A list of messages 
-        """
+    """ 
+    Parses a chat history file exported from Whatsapp
+    
+    Arguments:
+        filename (str): The name of the file to parse 
+    Returns:
+        A list of messages 
+    """
     def __init__(self, participant_names: List[str]):
         self.participant_names = participant_names
 
