@@ -1,6 +1,6 @@
 from .parser import Parser 
 from typing import List 
-from engine.message import Message 
+from message import Message
 from  datetime import datetime
 import re 
 

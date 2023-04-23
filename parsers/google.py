@@ -1,6 +1,6 @@
 from .parser import Parser 
 from typing import List
-from engine.message import Message 
+from message import Message
 import re 
 from datetime import datetime
 import json 
@@ -23,6 +23,8 @@ class GoogleParser(Parser):
     def _parse_timestamp(self, timestamp: str) -> datetime:
         pattern = r'(?P<month>\w+)\s(?P<date>\d{1,2}),\s(?P<year>\d{4})\sat\s(?P<time>\d{1,2}:\d{2}:\d{2}\s(?:AM|PM))'
         match = re.search(pattern, timestamp)
+        if match is None:
+            raise ValueError('File does not match expected input')
         month_number = MONTHS.index(match.group('month').lower()) + 1
         date = int(match.group('date'))
         year = int(match.group('year'))

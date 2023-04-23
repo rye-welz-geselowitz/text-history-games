@@ -12,3 +12,9 @@ Run game:
 ```
 python3 -m game
 ```
+
+## Dev notes 
+For type checking:
+```
+mypy game.py
+```

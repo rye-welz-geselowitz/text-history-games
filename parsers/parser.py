@@ -1,5 +1,5 @@
 from typing import List
-from engine.message import Message 
+from message import Message
 from abc import ABC, abstractmethod
 
 class Parser(ABC):
