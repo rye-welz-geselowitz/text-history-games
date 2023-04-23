@@ -9,6 +9,14 @@ MONTHS = ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'augus
 
 class GoogleParser(Parser):
     def parse_file(self, filename: str) -> List[Message]:
+        """ 
+        Parses a chat history file exported from Google Chat 
+
+        Arguments:
+            filename (str): The name of the file to parse 
+        Returns:
+            A list of messages 
+        """
         with open(filename, 'r') as f:
             data = json.load(f)
         messages = []

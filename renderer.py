@@ -1,4 +1,4 @@
-from game_engine import State, DisplayTheme
+from game_engine import State, DisplayColor
 import os
 from termcolor import cprint # type: ignore
 from typing import Optional 
@@ -21,11 +21,11 @@ class GameRenderer:
         os.system('clear')
         print('Loading!')
     
-    def _get_color_for_display_theme(self, display_theme: DisplayTheme) -> str:
+    def _get_color_for_display_theme(self, display_theme: DisplayColor) -> str:
         return {
-            DisplayTheme.STANDARD: self.standard_color,
-            DisplayTheme.EMPHASIZED_PRIMARY: self.emphasized_primary_color,
-            DisplayTheme.EMPHASIZED_SECONDARY: self.emphasized_secondary_color
+            DisplayColor.STANDARD: self.standard_color,
+            DisplayColor.EMPHASIZED_PRIMARY: self.emphasized_primary_color,
+            DisplayColor.EMPHASIZED_SECONDARY: self.emphasized_secondary_color
         }.get(display_theme, self.standard_color)
 
     def render_state_and_get_next(self, state: State) -> Optional[State]:
