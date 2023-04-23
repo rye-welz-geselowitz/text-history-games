@@ -1,7 +1,7 @@
 # Text Explorer
 A command-line game. Upload your texting history with a friend (supports WhatsApp and Google). The game will prompt you with an out-of-context text; guess the date, sender identity, and context.
 
-![Screen recording of the game](https://github.com/rye-welz-geselowitz/text-history-games/blob/main/readme-screen-recording.mov?raw=true)
+![Screen recording of the game](https://github.com/rye-welz-geselowitz/text-history-games/blob/main/readme-screen-recording.gif?raw=true)
 
 ## Run the game!
 Create virtual env:
