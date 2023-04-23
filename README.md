@@ -27,7 +27,7 @@ python3 -m game
 For type checking:
 ```
 mypy game.py
+```
 
 ### TODOS
 Unit tests! 
-```
