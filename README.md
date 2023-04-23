@@ -13,7 +13,7 @@ Here's a screen recording with some sample data:
 
 
 ## Run the game!
-⚠️ This project has been developed and tested to run in iTerm on Mac; it has not been tested against other terminals.
+_**NOTE**: ⚠️ This project has been developed and tested to run in iTerm on Mac; it has not been tested against other terminals._
 
 Export your own text messages history:
 * From [WhatsApp](https://faq.whatsapp.com/1180414079177245/?cms_platform=android)
