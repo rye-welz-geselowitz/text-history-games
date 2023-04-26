@@ -23,7 +23,7 @@ def run(file_input_configs: List[FileInputConfig]) -> None:
     )
     renderer.loading()
 
-    engine = GameEngine(file_input_configs)
+    engine = GameEngine.from_file_configs(file_input_configs)
 
     state: Optional[State] = engine.get_next_state()
     while state:

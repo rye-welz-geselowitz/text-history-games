@@ -73,15 +73,26 @@ class GoogleFileConfig(FileInputConfig):
 class GameEngine:
     """ Engine for a game in which players are asked to guess the datem, sender and 
     context of text messages from their chat history. """
-    def __init__(self, file_input_configs: List[FileInputConfig]) -> None: 
-        self._indexed_messages = GameEngine._get_indexed_messages_from_files(file_input_configs)
+    def __init__(self, messages: List[Message]) -> None:
+        sorted_messages = sorted(messages, key=lambda m: m.when_created)
+        self._indexed_messages = [
+            IndexedMessage(message=message, idx=idx)
+            for idx, message in enumerate(sorted_messages)
+        ]       
+    
+    @staticmethod
+    def from_file_configs(file_input_configs: List[FileInputConfig]) -> 'GameEngine':
+        """ Returns an instance of GameEngine with messages parsed from 
+        the given file configs """
+        messages = GameEngine._get_messages_from_files(file_input_configs)
+        return GameEngine(messages)
     
     def get_next_state(self) -> State:
         """ Returns the next state for the game """
         return self._get_choose_theme_state()
 
     @staticmethod
-    def _get_indexed_messages_from_files(file_input_configs: List[FileInputConfig]) -> List[IndexedMessage]:
+    def _get_messages_from_files(file_input_configs: List[FileInputConfig]) -> List[Message]:
         """ 
         Arguments:
             file_input_configs (List[FileInputConfig]): A list of dataclasses representing 
@@ -104,11 +115,7 @@ class GameEngine:
                 all_messages+= google_parser.parse_file(
                     file_input_config.filename) 
 
-        sorted_messages = sorted(all_messages, key=lambda m: m.when_created)
-        return [
-            IndexedMessage(message=message, idx=idx)
-            for idx, message in enumerate(sorted_messages)
-        ]
+        return all_messages
     
     def _get_choose_theme_state(self) -> State:
         """ Returns an instance of State prompting the player to choose a theme """
